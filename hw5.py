@@ -8,7 +8,7 @@ from collections import Counter
 
 def main(filename):
     # read file into lines
-    lines = open(filename).readlines()
+    lines = open('i_have_a_dream.txt').readlines()
 
     # declare a word list
     all_words = []
@@ -38,7 +38,7 @@ def main(filename):
     # a,12345
     # I,23456
     # ...
-    with open("wordcount.csv", "w",newline='') as csv_file:
+    with open("wordcount.csv", "w") as csv_file:
         # create a csv writer from a file object (or descriptor)
         writer = csv.writer(csv_file)
         # write table head
@@ -49,7 +49,7 @@ def main(filename):
 
     # dump to a json file named "wordcount.json"
     with open("wordcount.json", "w") as json_file:
-        writer = json.dump(counter.most_common(), json_file) 
+        writer = json.dump(counter.most_common(), json_file)
 
     # BONUS: dump to a pickle file named "wordcount.pkl"
     # hint: dump the Counter object directly
